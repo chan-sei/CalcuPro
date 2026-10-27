@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+  <main class="page">
+    <section class="calculator">
+      <header class="topbar">
+        <div class="topbar-spacer" aria-hidden="true"></div>
+        <button id="themeButton" class="icon-btn" aria-label="Toggle theme">☀</button>
+      </header>
+
+      <section class="display" aria-live="polite">
+        <div id="expression" class="expression">&nbsp;</div>
+        <div id="result" class="result">0</div>
+      </section>
+
+      <div id="upsell" class="upsell hidden">To think faster, buy a subscription! ✨</div>
+
+      <section class="keypad">
+        <button class="key special" data-action="clear">C</button>
+        <button class="key special" data-action="parentheses">( )</button>
+        <button class="key special" data-action="percent">%</button>
+        <button class="key operator premium" data-value="/" data-plan="ULTRA" data-feature="Division"><i></i>÷</button>
+
+        <button class="key" data-value="7">7</button>
+        <button class="key" data-value="8">8</button>
+        <button class="key" data-value="9">9</button>
+        <button class="key operator premium" data-value="*" data-plan="PRO" data-feature="Multiplication"><i></i>×</button>
+
+        <button class="key" data-value="4">4</button>
+        <button class="key" data-value="5">5</button>
+        <button class="key" data-value="6">6</button>
+        <button class="key operator premium" data-value="-" data-plan="PRO" data-feature="Subtraction"><i></i>−</button>
+
+        <button class="key" data-value="1">1</button>
+        <button class="key" data-value="2">2</button>
+        <button class="key" data-value="3">3</button>
+        <button class="key operator add" data-value="+"><i></i>+</button>
+
+        <button class="key zero" data-value="0">0</button>
+        <button class="key premium" data-value="." data-plan="ULTRA" data-feature="Decimals"><i></i>.</button>
+        <button class="key equals" data-action="equals">=</button>
+      </section>
+    </section>
+  </main>
+
+  <div id="modal" class="modal-wrap hidden" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true">
+      <button id="closeModal" class="close-btn">×</button>
+      <p class="eyebrow">PREMIUM</p>
+      <h2>Unlock Premium Features</h2>
+      <p id="modalMessage" class="modal-copy">Upgrade to access more mathematics.</p>
+
+      <div class="plans">
+        <article class="plan">
+          <h3>PRO</h3>
+          <div class="price">₱499<span>/mo</span></div>
+          <ul>
+            <li>✓ Subtraction (−)</li>
+            <li>✓ Multiplication (×)</li>
+            <li>✓ Theme Toggle</li>
+            <li>✓ Faster thinking</li>
+          </ul>
+          <button class="subscribe" data-subscribe="PRO">Subscribe to PRO</button>
+        </article>
+
+        <article class="plan featured">
+          <div class="popular">MOST POPULAR</div>
+          <h3>ULTRA</h3>
+          <div class="price">₱799<span>/mo</span></div>
+          <ul>
+            <li>✓ All PRO features</li>
+            <li>✓ Division (÷)</li>
+            <li>✓ Decimals (.)</li>
+            <li>✓ Instant Equals</li>
+            <li>✓ Priority Support</li>
+          </ul>
+          <button class="subscribe ultra" data-subscribe="ULTRA">Subscribe to ULTRA</button>
+        </article>
+      </div>
+
+      <button id="maybeLater" class="later">Maybe later</button>
+    </section>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+  <script src="script.js"></script>
+</body>
+</html>
